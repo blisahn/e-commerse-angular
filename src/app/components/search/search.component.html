@@ -1,0 +1,13 @@
+<!-- we change type form to the div because we want to add functionality in this search block -->
+<div class="form-header">
+    <!-- then we are adding a template input to our code to being a paramter for doSearch method on search-component.ts class-->
+    <input #myInput type="text" 
+    placeholder="Search for data ..."
+    class="au-input au-input-xl"
+    (keyup.enter) = "doSearch(myInput.value)"/>
+
+    <button (click)="doSearch(myInput.value)" class="au-btn-submit" >
+        Search
+    </button>
+
+</div>

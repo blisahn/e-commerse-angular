@@ -1,0 +1,20 @@
+<!-- Creating a login-status component for
+     show login and logout button for 
+     specified conditions -->
+<div class="login-status-header">
+    <!-- if userFullName is set returns true-->
+    <div *ngIf="isAuthenticated && userFullName" class="login-status-user-info">
+        Welcome back {{userFullName}}
+    </div>
+
+    <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn">Login</button>
+
+    <button *ngIf="isAuthenticated" (click)="logout()" class="security-btn">Logout</button>
+
+    <!-- Used a 'routerLink' so need to define a route-->
+    <button *ngIf="isAuthenticated" routerLink="/members" class="security-btn ml-1">Member</button>
+
+    <!-- Used a 'routerLink' so need to define a route-->
+    <button *ngIf="isAuthenticated" routerLink="/order-history" class="security-btn ml-1">Orders</button>
+
+</div>
